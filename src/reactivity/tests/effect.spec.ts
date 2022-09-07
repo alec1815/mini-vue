@@ -79,9 +79,9 @@ describe('effect',()=>{
     
         stop(runner);
         // 单纯的触发 set
-        obj.prop = 3;
+        // obj.prop = 3;
         // get => set
-        // obj.prop++;
+        obj.prop++;
         expect(dummy).toBe(2);
     
         runner();
