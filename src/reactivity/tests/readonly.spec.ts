@@ -12,7 +12,7 @@ describe("readonly",()=>{
         expect(wrapped.foo).toBe(1)
     })
 
-    it("warn then call set",()=>{
+    it('warn then call set', ()=>{
 
         console.warn = jest.fn()
 
