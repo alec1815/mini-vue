@@ -2,7 +2,7 @@ import { effect } from "../effect";
 import { ref } from "../ref"
 
 describe("ref",()=>{
-    it.only("happy path", ()=>{
+    it("happy path", ()=>{
         const num = ref(1)
         expect(num.value).toBe(1)
     })
