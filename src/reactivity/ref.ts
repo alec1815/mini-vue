@@ -1,3 +1,4 @@
+import { hasChanged } from "../shared";
 import { isTracking, trackEffects, triggerEffects } from "./effect";
 
 class RefImpl{
@@ -8,15 +9,21 @@ class RefImpl{
         this.dep = new Set()
     }
     get value(){
-        if(isTracking()){
-            trackEffects(this.dep)
-        }
+        trackRefValue(this)
         return this._value  
     }
     set value(newValue){
-        if(Object.is(newValue,this._value)) return
-        this._value = newValue
-        triggerEffects(this.dep)
+        if(hasChanged(this._value,newValue)){
+            this._value = newValue
+            triggerEffects(this.dep)
+        }
+        
+    }
+}
+
+function trackRefValue(ref){
+    if(isTracking()){
+        trackEffects(ref.dep)
     }
 }
 
