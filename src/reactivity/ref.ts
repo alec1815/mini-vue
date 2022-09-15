@@ -4,6 +4,7 @@ import { isTracking, trackEffects, triggerEffects } from "./effect";
 class RefImpl{
     private _value: any;
     public dep
+    
     constructor(value){
         this._value = value
         this.dep = new Set()
