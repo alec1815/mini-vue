@@ -69,5 +69,12 @@ describe("ref",()=>{
         expect(user.age.value).toBe(10)
         expect(propxyUser.age).toBe(10)
         expect(propxyUser.name).toBe("xiaoming")
+
+        propxyUser.age = 20
+        expect(propxyUser.age).toBe(20)
+        expect(user.age.value).toBe(20)
+        propxyUser.age = ref(10)
+        expect(propxyUser.age).toBe(10)
+        expect(user.age.value).toBe(10)
     })
 })
