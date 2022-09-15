@@ -1,12 +1,15 @@
-import { hasChanged } from "../shared";
+import { hasChanged, isObject } from "../shared";
 import { isTracking, trackEffects, triggerEffects } from "./effect";
+import { reactive } from "./reactive";
 
 class RefImpl{
     private _value: any;
     public dep
+    private _rawVlaue: any;
     
     constructor(value){
-        this._value = value
+        this._value = convert(value)
+        this._rawVlaue = value
         this.dep = new Set()
     }
     get value(){
@@ -14,12 +17,17 @@ class RefImpl{
         return this._value  
     }
     set value(newValue){
-        if(hasChanged(this._value,newValue)){
-            this._value = newValue
+        if(hasChanged(this._rawVlaue,newValue)){
+            this._rawVlaue = newValue
+            this._value = convert(newValue)
             triggerEffects(this.dep)
         }
         
     }
+}
+
+function convert(value){
+    return isObject(value) ? reactive(value) : value
 }
 
 function trackRefValue(ref){
