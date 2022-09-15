@@ -7,6 +7,7 @@ describe("ref",()=>{
         const num = ref(1)
         expect(num.value).toBe(1)
     })
+    
     it("should be reactive",()=>{
         const num = ref(1)
         let dummy
