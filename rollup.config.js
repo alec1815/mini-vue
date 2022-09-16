@@ -1,3 +1,4 @@
+import pkg from "./package.json";
 import typescript from "@rollup/plugin-typescript"
 
 export default {
@@ -7,11 +8,11 @@ export default {
         //2. esm
         {
             format: "cjs",
-            file: "lib/guid-mini-vue.cjs.js"
+            file: pkg.main
         },
         {
             format: "es",
-            file: "lib/guid-mini-vue.es.js"
+            file: pkg.module
         }
     ],
     plugins: [

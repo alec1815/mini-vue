@@ -1,7 +1,8 @@
 {
   "name": "mini-vue",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "lib/guid-mini-vue.cjs.js",
+  "module": "lib/guid-mini-vue.es.js",
   "license": "MIT",
   "scripts": {
     "test": "jest",
