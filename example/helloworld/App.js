@@ -1,8 +1,9 @@
 
+import { h } from "../../lib/guid-mini-vue.es.js"
 
 export const App = {
     render() {
-        return history("div", "hi, " + this.msg)
+        return h("div", "hi, " + this.msg)
     },
     setup() {
         return {

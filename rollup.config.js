@@ -1,7 +1,7 @@
 import typescript from "@rollup/plugin-typescript"
 
 export default {
-    input: "./index.ts",
+    input: "./src/index.ts",
     output: [
         //1. cjs commonjs
         //2. esm

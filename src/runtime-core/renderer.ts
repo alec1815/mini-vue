@@ -8,9 +8,13 @@ export function render(vnode,container){
 
 function patch(vnode,container){
 
+    procesElement()
+
     // 去处理组件
     procesComponent(vnode,container)
 }
+
+function procesElement(){}
 
 function procesComponent(vnode,container){
     mountComponent(vnode,container)
