@@ -3,7 +3,6 @@ import { createComponentInstance, setupComponent } from "./component"
 
 export function render(vnode,container){
     // patch
-    // 
     patch(vnode,container)
 }
 
