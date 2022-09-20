@@ -13,6 +13,9 @@ export const App = {
                 class: ["red", "hard"],
                 onClick() {
                     console.log("click")
+                },
+                onMousedown() {
+                    console.log("mousedown")
                 }
             },
             // [h("p", { class: "red" }, "hi"), h("p", { class: "blue" }, "mini-vue")]
