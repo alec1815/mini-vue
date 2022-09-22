@@ -20,7 +20,7 @@ export const App = {
                 }
             },
             [h("div", {}, "hi," + this.msg), h(Foo, {
-                const: 1
+                count: 1
             })]
             // [h("p", { class: "red" }, "hi"), h("p", { class: "blue" }, "mini-vue")]
             // "hi, mini-vue"
