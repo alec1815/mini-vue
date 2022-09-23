@@ -1,3 +1,4 @@
+import { hasOwn } from "../shared/index"
 
 
 const publicPropertiesMap = {
@@ -14,7 +15,7 @@ export const PublicInstaceProxyHandlers = {
             return setupState[key]
         }
 
-        const hasOwn = (val,key)=> Object.prototype.hasOwnProperty.call(val,key)
+        
 
         if(hasOwn(setupState,key)){
             return setupState[key]
