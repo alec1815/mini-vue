@@ -5,7 +5,7 @@ class ComputedRefImpl{
     private _dirty: boolean = true
     private _value: any
     private _effect: any
-    constructor(getter){
+    constructor(getter: any){
         this._getter = getter
         this._effect = new ReactiveEffect(getter,()=>{
             if(!this._dirty){
