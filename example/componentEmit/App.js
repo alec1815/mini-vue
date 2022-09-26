@@ -6,7 +6,11 @@ export const App = {
     name: "App",
     render() {
         // emit
-        return h("div", {}, [h("div", {}, "App"), h(Foo, {})])
+        return h("div", {}, [h("div", {}, "App"), h(Foo, {
+            onAdd() {
+                console.log("onAdd")
+            }
+        })])
     },
     setup() {
         return {}
