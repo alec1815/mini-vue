@@ -7,8 +7,11 @@ export const App = {
     render() {
         // emit
         return h("div", {}, [h("div", {}, "App"), h(Foo, {
-            onAdd() {
-                console.log("onAdd")
+            onAdd(a, b) {
+                console.log("onAdd", a, b)
+            },
+            onAddFoo() {
+                console.log("onAddFoo")
             }
         })])
     },
