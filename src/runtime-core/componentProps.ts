@@ -1,5 +1,5 @@
 
 
-export function initProps(instance, rawProps){
+export function initProps(instance:any, rawProps:any){
     instance.props = rawProps || {}
 }
