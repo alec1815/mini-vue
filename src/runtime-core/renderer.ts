@@ -7,7 +7,7 @@ export function render(vnode:any,container:any){
     patch(vnode,container)
 }
 
-function patch(vnode,container){
+function patch(vnode:any,container:any){
 
     const { shapeFlage } = vnode
 
