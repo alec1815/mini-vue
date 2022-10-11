@@ -2,7 +2,7 @@ import { isObject } from "../shared/index"
 import { ShapeFlage } from "../shared/ShapeFlage"
 import { createComponentInstance, setupComponent } from "./component"
 
-export function render(vnode,container){
+export function render(vnode:any,container:any){
     // patch
     patch(vnode,container)
 }
