@@ -1,12 +1,20 @@
+/*
+ * @Author: wzhaofei wangzf@wellnkiot.com
+ * @Date: 2022-09-06 16:18:28
+ * @LastEditors: wzhaofei wangzf@wellnkiot.com
+ * @LastEditTime: 2022-10-18 18:31:08
+ * @FilePath: \mini-vue\src\shared\index.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 export const extend = Object.assign
 
-export const isObject = (val)=>{
+export const isObject = (val:any)=>{
     return val !== null && typeof val === 'object'
 }
 
-export const hasChanged =(value,newValue)=> !Object.is(value,newValue)
+export const hasChanged =(value:any,newValue:any)=> !Object.is(value,newValue)
 
-export const hasOwn = (val,key)=> Object.prototype.hasOwnProperty.call(val,key)
+export const hasOwn = (val:any,key:any)=> Object.prototype.hasOwnProperty.call(val,key)
 
 
 export const camelize = (str:string)=>{
