@@ -1,4 +1,4 @@
-import { h } from "../../lib/guid-mini-vue.es.js"
+import { h, renderSlots } from "../../lib/guid-mini-vue.es.js"
 
 export const Foo = {
     setup() {
@@ -9,6 +9,8 @@ export const Foo = {
 
         // Foo .vnode children
         console.log(this.$slots)
-        return h("div", {}, [foo, this.$slots])
+
+        // renderSlots
+        return h("div", {}, [foo, renderSlots(this.$slots)])
     }
 }
