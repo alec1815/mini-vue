@@ -6,6 +6,9 @@ export const Foo = {
     },
     render() {
         const foo = h("p", {}, "foo")
-        return h("div", {}, [foo, btn])
+
+        // Foo .vnode children
+        console.log(this.$slots)
+        return h("div", {}, [foo, this.$slots])
     }
 }
