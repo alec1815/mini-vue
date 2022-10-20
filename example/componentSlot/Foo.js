@@ -11,8 +11,11 @@ export const Foo = {
         console.log(this.$slots)
 
         // renderSlots
+        // 具名插槽
         // 1.渲染的元素
         // 2.渲染的位置
-        return h("div", {}, [renderSlots(this.$slots, "header"), foo, renderSlots(this.$slots, "footer")])
+        // 作用域插槽
+        const age = 1
+        return h("div", {}, [renderSlots(this.$slots, "header", { age }), foo, renderSlots(this.$slots, "footer")])
     }
 }
