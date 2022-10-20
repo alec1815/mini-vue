@@ -1,7 +1,11 @@
+import { ShapeFlage } from "../shared/ShapeFlage"
 
 
 export function initSlots(instance:any, children:any){
-    normalizeObjectSlots(children,instance.slots)
+    const {vnode} = instance
+    if(vnode.shapeFlage & ShapeFlage.SLOT_CHILDREN){
+        normalizeObjectSlots(children,instance.slots)
+    }
 }
 
 function normalizeObjectSlots(children,slots) {
