@@ -1,6 +1,7 @@
 import { isObject } from "../shared/index"
 import { ShapeFlage } from "../shared/ShapeFlage"
 import { createComponentInstance, setupComponent } from "./component"
+import { Fragment } from "./vnode"
 
 export function render(vnode:any,container:any){
     // patch
@@ -12,7 +13,7 @@ function patch(vnode:any,container:any){
     const { type ,shapeFlage } = vnode
 
     switch (type) {
-        case "Fragment":
+        case Fragment:
             procesFragment(vnode,container)
             break;
     
