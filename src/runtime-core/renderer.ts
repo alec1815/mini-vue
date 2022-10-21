@@ -9,14 +9,28 @@ export function render(vnode:any,container:any){
 
 function patch(vnode:any,container:any){
 
-    const { shapeFlage } = vnode
+    const { type ,shapeFlage } = vnode
 
-    if(shapeFlage & ShapeFlage.ELEMENT){
-        procesElement(vnode,container)
-    }else if(shapeFlage & ShapeFlage.STATEFUL_COMPONENT){
-        // 去处理组件
-        procesComponent(vnode,container)
+    switch (type) {
+        case "Fragment":
+            procesFragment(vnode,container)
+            break;
+    
+        default:
+            if(shapeFlage & ShapeFlage.ELEMENT){
+                procesElement(vnode,container)
+            }else if(shapeFlage & ShapeFlage.STATEFUL_COMPONENT){
+                // 去处理组件
+                procesComponent(vnode,container)
+            }
+            break;
     }
+
+    
+}
+
+function procesFragment(vnode: any, container: any) {
+    mountChildren(vnode,container)
 }
 
 function procesElement(vnode,container){
@@ -79,3 +93,5 @@ function setupRenderEffect(initialVNode,instance,container) {
 
     initialVNode.el = subTree.el
 }
+
+
