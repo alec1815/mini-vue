@@ -1,7 +1,7 @@
 import { isObject } from "../shared/index"
 import { ShapeFlage } from "../shared/ShapeFlage"
 import { createComponentInstance, setupComponent } from "./component"
-import { Fragment } from "./vnode"
+import { Fragment,Text } from "./vnode"
 
 export function render(vnode:any,container:any){
     // patch
@@ -16,7 +16,9 @@ function patch(vnode:any,container:any){
         case Fragment:
             procesFragment(vnode,container)
             break;
-    
+            case Text:
+                procesText(vnode,container)
+                break;
         default:
             if(shapeFlage & ShapeFlage.ELEMENT){
                 procesElement(vnode,container)
@@ -28,6 +30,13 @@ function patch(vnode:any,container:any){
     }
 
     
+}
+
+function procesText(vnode: any, container: any) {
+    // mountChildren(vnode,container)
+    const {children} = vnode
+    const textNode = ( vnode.el = document.createTextNode(children))
+    container.append(textNode)
 }
 
 function procesFragment(vnode: any, container: any) {
@@ -94,5 +103,6 @@ function setupRenderEffect(initialVNode,instance,container) {
 
     initialVNode.el = subTree.el
 }
+
 
 
