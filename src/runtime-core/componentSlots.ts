@@ -18,6 +18,6 @@ function normalizeObjectSlots(children,slots) {
 }
 
 
-function normalizeSkotValue(value){
+function normalizeSkotValue(value:any){
     return Array.isArray(value) ? value : [value]
 }
