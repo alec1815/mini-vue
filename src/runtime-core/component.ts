@@ -4,7 +4,7 @@ import { initProps } from "./componentProps"
 import { PublicInstaceProxyHandlers } from "./componentPublicInstance"
 import { initSlots } from "./componentSlots"
 
-export function createComponentInstance(vnode){
+export function createComponentInstance(vnode:any){
     const component = {
         vnode,
         type:vnode.type,
@@ -19,7 +19,7 @@ export function createComponentInstance(vnode){
     return component
 }
 
-export function setupComponent(instance){
+export function setupComponent(instance:any){
     // TODO
     initProps(instance, instance.vnode.props)
     initSlots(instance, instance.vnode.children)
@@ -27,7 +27,7 @@ export function setupComponent(instance){
     setupStatefulComponent(instance)
 }
 
-function setupStatefulComponent(instance){
+function setupStatefulComponent(instance:any){
     const Component = instance.type
 
     instance.proxy = new Proxy({
