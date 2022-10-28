@@ -45,7 +45,7 @@ function setupStatefulComponent(instance:any){
     }
 }
 
-function handleSetupResult(instance, setupResult){
+function handleSetupResult(instance:any, setupResult:any){
     if(typeof setupResult === "object"){
         instance.setupState = setupResult
     }
