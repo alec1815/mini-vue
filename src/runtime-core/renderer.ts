@@ -43,7 +43,7 @@ function procesFragment(vnode: any, container: any) {
     mountChildren(vnode,container)
 }
 
-function procesElement(vnode,container){
+function procesElement(vnode:any,container:any){
     mountElement(vnode,container)
 }
 
