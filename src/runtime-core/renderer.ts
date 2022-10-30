@@ -47,7 +47,7 @@ function procesElement(vnode:any,container:any){
     mountElement(vnode,container)
 }
 
-function mountElement(vnode,container){
+function mountElement(vnode:any,container:any){
     const { children, type, props, shapeFlage } = vnode
     
     const el = vnode.el = (document.createElement(type))
