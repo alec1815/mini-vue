@@ -74,7 +74,7 @@ function mountElement(vnode:any,container:any){
 }
 
 function mountChildren(vnode:any,container:any){
-    vnode.children.forEach(v=>{
+    vnode.children.forEach((v:any)=>{
         patch(v,container)
     })
 }
